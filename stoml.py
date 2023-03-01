@@ -24,10 +24,15 @@ parser = argparse.ArgumentParser(description=__doc__,
                             formatter_class=argparse.RawDescriptionHelpFormatter) # display the script docstring on --help
 parser.add_argument("filename", help="TOML file")
 parser.add_argument("key", help="get value for key")
-parser.add_argument("-V", "--Version", help="show current version", action="store_true")
+parser.add_argument("-V", '--version', help="display current version", action='version', version='%(prog)s 0.2.0')
+parser.add_argument("-q", "--quiet", help="do not display error messages", action="store_true")
 
-# 1. Get command line arguments
+# 1. Get and process command line arguments
 args = parser.parse_args()
+
+## 1.1 Turn off logging if needed
+if args.quiet:
+    logging.disable()
 
 # 2. Open the file
 try:
