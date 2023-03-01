@@ -18,8 +18,9 @@ stoml [-h] [-V] filename table.key
  - table.key:           get value for key in table
 
 #### Options
- - -h, --help:     show this help message and exit
- -  -V, --Version:  show current version
+ - -h, --help:     show help message and exit
+ -  -V, --version:  show current version and exit
+ -  -q, --quiet:  do not display error messages
 
 ## Examples
 
